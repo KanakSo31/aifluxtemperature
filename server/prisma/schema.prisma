@@ -1,0 +1,14 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Temperature {
+  id        Int      @id @default(autoincrement())
+  value     Int
+  timestamp DateTime @default(now())
+}
